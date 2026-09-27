@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BioVida - Mundo da Biologia</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f8f4;
+            color: #222;
+        }
+
+        header {
+            background: #218c4c;
+            color: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .recepcao {
+            min-height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: #dff3e5;
+        }
+
+        .recepcao h2 {
+            font-size: 45px;
+            color: #176b39;
+            margin-bottom: 15px;
+        }
+
+        .recepcao p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: auto;
+            line-height: 1.6;
+        }
+
+        .botao {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 25px;
+            background: #218c4c;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+
+        section {
+            padding: 60px 8%;
+        }
+
+        section h2 {
+            text-align: center;
+            color: #176b39;
+            margin-bottom: 35px;
+            font-size: 30px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        .card h3 {
+            color: #218c4c;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            line-height: 1.5;
+            color: #555;
+        }
+
+        .animal {
+            text-align: center;
+        }
+
+        .animal .emoji {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .curiosidade {
+            background: #e5f5e9;
+        }
+
+        .curiosidade .card {
+            border-left: 5px solid #218c4c;
+        }
+
+        .novidades {
+            background: white;
+        }
+
+        footer {
+            background: #176b39;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 700px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 6px;
+            }
+
+            .recepcao h2 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🌱 BioVida</h1>
+
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="anatomia.html">Anatomia</a>
+            <a href="#animais">Animais</a>
+            <a href="#curiosidades">Curiosidades</a>
+            <a href="#novidades">Novidades</a>
+        </nav>
+    </header>
+
+
+    <!-- RECEPÇÃO -->
+    <section class="recepcao" id="inicio">
+        <div>
+            <h2>Bem-vindo ao BioVida!</h2>
+
+            <p>
+                Descubra o fascinante mundo da Biologia.
+                Conheça o corpo humano, os animais, a natureza
+                e várias curiosidades sobre a vida.
+            </p>
+
+            <a href="#anatomia" class="botao">
+                Começar a explorar
+            </a>
+        </div>
+    </section>
+
+
+    <!-- ANATOMIA -->
+    <section id="anatomia">
+        <h2>🧠 Anatomia Humana</h2>
+        <div class="cards">
+            <div class="card"><h3>❤️ Coração</h3><p>O coração bombeia o sangue para todo o corpo, levando oxigênio e nutrientes às células.</p></div>
+            <div class="card"><h3>🧠 Cérebro</h3><p>O cérebro participa do controle dos movimentos, pensamentos, memória, sentidos e emoções.</p></div>
+            <div class="card"><h3>🫁 Pulmões</h3><p>Os pulmões fazem parte do sistema respiratório e realizam as trocas gasosas.</p></div>
+            <div class="card"><h3>🦴 Esqueleto</h3><p>O esqueleto sustenta o corpo e ajuda a proteger órgãos internos importantes.</p></div>
+        </div>
+        <div style="text-align:center; margin-top:30px;"><a href="anatomia.html" class="botao">Explorar anatomia completa</a></div>
+    </section>
+
+
+    <!-- ANIMAIS -->
+    <section id="animais">
+        <h2>🐾 Animais por Tipo</h2>
+
+        <div class="cards">
+
+            <div class="card animal">
+                <div class="emoji">🦁</div>
+                <h3>Mamíferos</h3>
+                <p>
+                    Possuem pelos e alimentam seus filhotes
+                    principalmente com leite.
+                </p>
+            </div>
+
+            <div class="card animal">
+                <div class="emoji">🦅</div>
+                <h3>Aves</h3>
+                <p>
+                    Possuem penas, bico e são animais vertebrados.
+                    Muitas espécies conseguem voar.
+                </p>
+            </div>
+
+            <div class="card animal">
+                <div class="emoji">🐍</div>
+                <h3>Répteis</h3>
+                <p>
+                    São vertebrados geralmente cobertos por escamas
+                    e possuem adaptações para viver em ambientes terrestres.
+                </p>
+            </div>
+
+            <div class="card animal">
+                <div class="emoji">🐸</div>
+                <h3>Anfíbios</h3>
+                <p>
+                    Podem viver parte da vida na água e parte
+                    em ambientes terrestres.
+                </p>
+            </div>
+
+            <div class="card animal">
+                <div class="emoji">🐟</div>
+                <h3>Peixes</h3>
+                <p>
+                    São animais aquáticos que normalmente utilizam
+                    brânquias para respirar.
+                </p>
+            </div>
+
+            <div class="card animal">
+                <div class="emoji">🦋</div>
+                <h3>Insetos</h3>
+                <p>
+                    Possuem seis patas e representam um dos grupos
+                    mais diversos do planeta.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- CURIOSIDADES -->
+    <section class="curiosidade" id="curiosidades">
+        <h2>💡 Curiosidades da Biologia</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Você sabia?</h3>
+                <p>
+                    O corpo humano possui trilhões de células
+                    trabalhando juntas para manter o organismo funcionando.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Natureza incrível</h3>
+                <p>
+                    Algumas plantas conseguem se adaptar a ambientes
+                    extremamente secos e armazenar água em seus tecidos.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Vida marinha</h3>
+                <p>
+                    Os oceanos abrigam uma enorme diversidade de seres
+                    vivos, muitos deles ainda pouco conhecidos.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- NOVIDADES -->
+    <section class="novidades" id="novidades">
+        <h2>🔬 Novidades da Biologia</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>🧬 Descobertas científicas</h3>
+                <p>
+                    A ciência continua estudando o DNA para entender
+                    melhor as características dos seres vivos.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🌎 Meio ambiente</h3>
+                <p>
+                    Pesquisadores estudam novas formas de proteger
+                    a biodiversidade e os ecossistemas.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🦠 Microbiologia</h3>
+                <p>
+                    Microrganismos são estudados para compreender
+                    doenças, alimentos e processos importantes da natureza.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <footer>
+        <p>🌱 BioVida — Explorando o mundo da Biologia</p>
+        <p>© 2026 - Projeto Educacional</p>
+    </footer>
+
+</body>
+</html>
