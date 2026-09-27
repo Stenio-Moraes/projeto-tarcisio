@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BioVida - Anatomia Humana</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f8f4;
+            color: #222;
+        }
+
+        /* CABEÇALHO */
+
+        header {
+            background: #218c4c;
+            color: white;
+            padding: 18px 8%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* TOPO */
+
+        .topo {
+            background: #dff3e5;
+            text-align: center;
+            padding: 55px 20px;
+        }
+
+        .topo h2 {
+            color: #176b39;
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .topo p {
+            max-width: 750px;
+            margin: auto;
+            line-height: 1.6;
+            font-size: 17px;
+        }
+
+
+        /* SEÇÕES */
+
+        section {
+            padding: 55px 5%;
+        }
+
+        section h2 {
+            text-align: center;
+            color: #176b39;
+            margin-bottom: 35px;
+            font-size: 30px;
+        }
+
+
+        /* =========================
+           CORPO MASCULINO / FEMININO
+           ========================= */
+
+        .corpos {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 25px;
+
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .corpo {
+            background: white;
+
+            padding: 22px;
+
+            border-radius: 10px;
+
+            box-shadow:
+                0 3px 10px rgba(0,0,0,0.08);
+
+            text-align: center;
+        }
+
+        .corpo h3 {
+            color: #218c4c;
+
+            margin-bottom: 18px;
+
+            font-size: 21px;
+        }
+
+
+        /*
+        ÁREA VERDE DA IMAGEM
+
+        A imagem ficará automaticamente
+        dentro deste espaço.
+        */
+
+        .area-imagem-corpo {
+
+            width: 100%;
+            height: 430px;
+
+            border: 2px dashed #8bc9a2;
+
+            background: #eef8f0;
+
+            border-radius: 8px;
+
+            overflow: hidden;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        .area-imagem-corpo img {
+
+            width: 100%;
+            height: 100%;
+
+            /*
+            contain mantém a imagem inteira
+            dentro da área.
+            */
+
+            object-fit: contain;
+
+            display: block;
+        }
+
+
+        /* =========================
+           PRINCIPAIS PARTES
+           ========================= */
+
+        .partes {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(6, 1fr);
+
+            gap: 20px;
+
+            max-width: 1150px;
+
+            margin: auto;
+        }
+
+
+        .card {
+
+            background: white;
+
+            padding: 20px;
+
+            border-radius: 10px;
+
+            box-shadow:
+                0 3px 10px rgba(0,0,0,0.08);
+
+            border-left:
+                5px solid #218c4c;
+
+            min-height: 315px;
+        }
+
+
+        /*
+        ÁREA DA IMAGEM DO ÓRGÃO
+        */
+
+        .area-imagem-card {
+
+            width: 100%;
+
+            height: 115px;
+
+            border: 2px dashed #a8d7b8;
+
+            background: #f1f8f3;
+
+            border-radius: 7px;
+
+            margin-bottom: 18px;
+
+            overflow: hidden;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        .area-imagem-card img {
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: contain;
+
+            display: block;
+        }
+
+
+        .card h3 {
+
+            color: #218c4c;
+
+            margin-bottom: 12px;
+
+            font-size: 19px;
+        }
+
+
+        .card p {
+
+            line-height: 1.5;
+
+            color: #555;
+        }
+
+
+        /* BOTÃO */
+
+        .botao {
+
+            display: inline-block;
+
+            margin-top: 10px;
+
+            padding: 12px 25px;
+
+            background: #218c4c;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 6px;
+        }
+
+        .botao:hover {
+            background: #176b39;
+        }
+
+        .voltar {
+            text-align: center;
+            padding-top: 5px;
+        }
+
+
+        /* RODAPÉ */
+
+        footer {
+
+            background: #176b39;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 25px;
+        }
+
+
+        /* CELULAR */
+
+        @media (max-width: 1100px) {
+
+            .partes {
+                grid-template-columns:
+                    repeat(3, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 700px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 6px;
+            }
+
+            .topo h2 {
+                font-size: 30px;
+            }
+
+            .corpos {
+                grid-template-columns: 1fr;
+            }
+
+            .partes {
+                grid-template-columns: 1fr;
+            }
+
+            .area-imagem-corpo {
+                height: 350px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- CABEÇALHO -->
+
+<header>
+
+    <h1>🌱 BioVida</h1>
+
+    <nav>
+
+        <a href="home.html">
+            Início
+        </a>
+
+        <a href="anatomia.html">
+            Anatomia
+        </a>
+
+        <a href="home.html#animais">
+            Animais
+        </a>
+
+        <a href="home.html#curiosidades">
+            Curiosidades
+        </a>
+
+        <a href="home.html#novidades">
+            Novidades
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- INTRODUÇÃO -->
+
+<section class="topo">
+
+    <h2>
+        🧠 Anatomia Humana
+    </h2>
+
+    <p>
+
+        Conheça melhor o corpo humano,
+        seus principais órgãos, sistemas
+        e estruturas.
+
+        Explore algumas das partes mais
+        importantes e conhecidas do nosso organismo.
+
+    </p>
+
+</section>
+
+
+
+<!-- CORPOS -->
+
+<section>
+
+    <h2>
+        👤 Corpo Humano
+    </h2>
+
+
+    <div class="corpos">
+
+
+        <!-- MASCULINO -->
+
+        <div class="corpo">
+
+            <h3>
+                👨 Corpo Masculino
+            </h3>
+
+
+            <div class="area-imagem-corpo">
+
+                <!--
+                COLOQUE SUA IMAGEM AQUI
+
+                Exemplo:
+
+                <img
+                    src="imagens/corpo-masculino.jpg"
+                    alt="Anatomia masculina"
+                >
+
+                -->
+
+                <img
+                    src="../img/anatomiam.jpg"
+                    alt="Espaço para imagem do corpo masculino"
+                >
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FEMININO -->
+
+        <div class="corpo">
+
+            <h3>
+                👩 Corpo Feminino
+            </h3>
+
+
+            <div class="area-imagem-corpo">
+
+                <!--
+                COLOQUE SUA IMAGEM AQUI
+
+                Exemplo:
+
+                <img
+                    src="imagens/corpo-feminino.jpg"
+                    alt="Anatomia feminina"
+                >
+
+                -->
+
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Human_skeleton_front.svg"
+                    alt="Espaço para imagem do corpo feminino"
+                >
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- PRINCIPAIS PARTES -->
+
+<section>
+
+    <h2>
+        🔬 Principais partes do corpo
+    </h2>
+
+
+    <div class="partes">
+
+
+        <!-- CÉREBRO -->
+
+        <div class="card">
+
+            <div class="area-imagem-card">
+
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Human_brain.png"
+                    alt="Cérebro humano"
+                >
+
+            </div>
+
+            <h3>
+                🧠 Cérebro
+            </h3>
+
+            <p>
+
+                É uma das principais estruturas
+                do sistema nervoso.
+
+                Participa do controle dos movimentos,
+                pensamentos, memória, sentidos e
+                outras funções do organismo.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- CORAÇÃO -->
+
+        <div class="card">
+
+            <div class="area-imagem-card">
+
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Diagram_of_the_human_heart_(clean).svg"
+                    alt="Coração humano"
+                >
+
+            </div>
+
+            <h3>
+                ❤️ Coração
+            </h3>
+
+            <p>
+
+                Órgão muscular que bombeia
+                o sangue pelo sistema circulatório,
+                ajudando a distribuir oxigênio
+                e nutrientes pelo corpo.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- PULMÕES -->
+
+        <div class="card">
+
+            <div class="area-imagem-card">
+
+                <img
+                    src="https://www.researchgate.net/figure/Figura-3-Esquema-de-pulmoes-humanos-mostrando-no-seu-interior-a-arvore-bronquica_fig17_368884192"
+                    alt="Pulmões"
+                >
+
+            </div>
+
+            <h3>
+                🫁 Pulmões
+            </h3>
+
+            <p>
+
+                Fazem parte do sistema respiratório
+                e são responsáveis pelas trocas
+                de gases entre o ar e o sangue.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- OSSOS -->
+
+        <div class="card">
+
+            <div class="area-imagem-card">
+
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Human_skeleton_front_no-text_no-color.svg"
+                    alt="Esqueleto humano"
+                >
+
+            </div>
+
+            <h3>
+                🦴 Ossos
+            </h3>
+
+            <p>
+
+                Formam o esqueleto,
+                dando sustentação ao corpo
+                e contribuindo para a proteção
+                de diversos órgãos.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- SANGUE -->
+
+        <div class="card">
+
+            <div class="area-imagem-card">
+
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Diagram_of_the_human_heart_(clean).svg"
+                    alt="Sangue"
+                >
+
+
+            </div>
+
+            <h3>
+                🩸 Sangue
+            </h3>
+
+            <p>
+
+                Circula pelos vasos sanguíneos
+                e transporta gases, nutrientes,
+                hormônios e outras substâncias
+                pelo organismo.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- ESTÔMAGO -->
+
+        <div class="card">
+
+            <div class="area-imagem-card">
+
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Diagram_of_the_human_heart_(clean).svg"
+                    alt="Estômago"
+                >
+
+                
+            </div>
+
+            <h3>
+                🍽️ Estômago
+            </h3>
+
+            <p>
+
+                Órgão do sistema digestório
+                que participa da digestão
+                dos alimentos depois que
+                eles são engolidos.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- FÍGADO -->
+
+        <div class="card">
+
+            <div class="area-imagem-card">
+
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Liver_Diagram_(updated).svg"
+                    alt="Fígado humano"
+                >
+
+            </div>
+
+            <h3>
+                🧪 Fígado
+            </h3>
+
+            <p>
+
+                Participa de diversas funções
+                importantes, incluindo o processamento
+                de nutrientes e a produção de
+                substâncias essenciais ao organismo.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- RINS -->
+
+        <div class="card">
+
+            <div class="area-imagem-card">
+
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Diagram_of_the_human_heart_(clean).svg"
+                    alt="Rins"
+                >
+
+
+            </div>
+
+            <h3>
+                🫘 Rins
+            </h3>
+
+            <p>
+
+                Os rins filtram o sangue
+                e ajudam a controlar a
+                quantidade de água e sais
+                presentes no organismo,
+                formando a urina.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- VOLTAR -->
+
+<section class="voltar">
+
+    <a
+        href="home.html"
+        class="botao"
+    >
+
+        ← Voltar para o BioVida
+
+    </a>
+
+</section>
+
+
+
+<!-- RODAPÉ -->
+
+<footer>
+
+    <p>
+        🌱 BioVida — Explorando o mundo da Biologia
+    </p>
+
+    <p>
+        © 2026 - Projeto Educacional
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
